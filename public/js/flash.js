@@ -23,7 +23,10 @@ jQuery.fn.centerBox = function() {
     var height = this.height();
 
     this.css({
-        'marginLeft': '-' + width / 2 + 'px'
+        'top': '50%',
+        'left': '50%',
+        'marginLeft': '-' + width / 2 + 'px',
+        'marginTop': '-' + height / 2 + 'px',
     });
 
     return this;

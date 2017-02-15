@@ -10,8 +10,6 @@
 }
 #flashMessagesWrap > div.flash-message {
     position: absolute;
-    left: 50%;
-    top: 50%;
     width: 100%;
     height: auto;
     max-width: 500px;
