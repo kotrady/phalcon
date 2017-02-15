@@ -1,0 +1,6 @@
+{
+    "name": "jakub/latte",
+    "require": {
+        "latte/latte": "~2.4.3"
+    }
+}

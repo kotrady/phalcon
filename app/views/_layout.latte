@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>bart online v2.0</title>
+        {block css}{/block}
+    </head>
+    <body>
+        {foreach $flashes as $flash}
+            <span>{$flash->type}</span>
+            <span>{$flash->message}</span>
+        {/foreach}
+
+        {block content}{/block}
+        {block js}{/block}
+    </body>
+</html>
