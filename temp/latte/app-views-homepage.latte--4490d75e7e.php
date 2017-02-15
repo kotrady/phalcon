@@ -57,13 +57,7 @@ class Template4490d75e7e extends Latte\Runtime\Template
 
 	function blockContent($_args)
 	{
-		extract($_args);
-		?>    <?php echo LR\Filters::escapeHtmlText(call_user_func($this->filters->translate, 'Ahoj')) ?>
-
-    <img src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 9 */ ?>/images/thumb/2/1.jpg" alt="">
-    <img src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 10 */ ?>/images/main/2/1.jpg" alt="">
-    <img src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 11 */ ?>/images/main-test/2/1.jpg" alt="">
-<?php
+		
 	}
 
 }

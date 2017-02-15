@@ -25,38 +25,28 @@ class Template4e7b33afbf extends Latte\Runtime\Template
 <html>
     <head>
         <title>bart online v2.0</title>
+        <link rel="stylesheet" href="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 4 */ ?>/public/css/core.css">
         <?php
 		if ($this->getParentName()) return get_defined_vars();
 		$this->renderBlock('css', get_defined_vars());
 ?>
     </head>
     <body>
-<?php
-		$iterations = 0;
-		foreach ($flashes as $flash) {
-			?>            <span><?php echo LR\Filters::escapeHtmlText($flash->type) /* line 8 */ ?></span>
-            <span><?php echo LR\Filters::escapeHtmlText($flash->message) /* line 9 */ ?></span>
-<?php
-			$iterations++;
-		}
-?>
-
         <?php
 		$this->renderBlock('content', get_defined_vars());
+		?>        <script type="text/javascript" src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 9 */ ?>/public/jquery/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 10 */ ?>/public/js/core.js"></script>
+<?php
+		if ($flashes) {
+			?>            <script type="text/javascript" src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 12 */ ?>/public/js/flash.js"></script>
+<?php
+		}
 		?>        <?php
 		$this->renderBlock('js', get_defined_vars());
 ?>
     </body>
 </html><?php
 		return get_defined_vars();
-	}
-
-
-	function prepare()
-	{
-		extract($this->params);
-		if (isset($this->params['flash'])) trigger_error('Variable $flash overwritten in foreach on line 7');
-		
 	}
 
 

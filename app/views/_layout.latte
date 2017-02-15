@@ -1,15 +1,16 @@
 <html>
     <head>
         <title>bart online v2.0</title>
+        <link rel="stylesheet" href="{$WEBROOT}/public/css/core.css">
         {block css}{/block}
     </head>
     <body>
-        {foreach $flashes as $flash}
-            <span>{$flash->type}</span>
-            <span>{$flash->message}</span>
-        {/foreach}
-
         {block content}{/block}
+        <script type="text/javascript" src="{$WEBROOT}/public/jquery/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="{$WEBROOT}/public/js/core.js"></script>
+        {if $flashes}
+            <script type="text/javascript" src="{$WEBROOT}/public/js/flash.js"></script>
+        {/if}
         {block js}{/block}
     </body>
 </html>
