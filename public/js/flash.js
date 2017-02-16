@@ -4,6 +4,7 @@
 $(function(){
     addFlashMessage('ERROR', 'TITLE', 'TEXT');
     addFlashMessage('ERROR2', 'TITLE2', 'TEXT2');
+
 });
 
 function addFlashMessage(type,title,text){
