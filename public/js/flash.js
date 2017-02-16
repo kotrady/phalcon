@@ -13,7 +13,7 @@ function addFlashMessage(type,title,text){
         flashMessagesWrap = $('<div></div>').attr('id', 'flashMessagesWrap').appendTo($('body')).show();
     }
 
-    flashMessages = $('<div></div>').attr('class', 'flash-message').appendTo(flashMessagesWrap);
+    var flashMessages = $('<div></div>').attr('class', 'flash-message').appendTo(flashMessagesWrap);
     flashMessages.append('<div class="flash-message-title ' + type + '">' + title + '</div><div class="flash-message-text">' + text + '</div>').centerBox();
     flashMessages.fadeIn();
 };
