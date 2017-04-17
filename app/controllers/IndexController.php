@@ -1,9 +1,7 @@
 <?php
-namespace Action\Controllers;
+namespace Mike\Controllers;
 
-use Web\Login as Login;
-
-class IndexController extends Login {
+class IndexController extends \Mike {
 
     public function indexAction() {
         $this->flashSession->success("The post was correctly saved!");

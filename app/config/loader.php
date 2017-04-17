@@ -11,8 +11,8 @@ $loader->registerDirs([
 ]);
 
 $loader->registerNamespaces([
-    'Action\Controllers'      => __DIR__ . '/../controllers',
-    'Action\Controllers\Base' => __DIR__ . '/../controllers/base',
+    'Mike\Controllers'      => __DIR__ . '/../controllers',
+    'Mike\Controllers\Default' => __DIR__ . '/../controllers/Default'
 ]);
 
 $loader->register();

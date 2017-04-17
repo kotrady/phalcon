@@ -39,6 +39,15 @@ try {
      */
     $application = new \Phalcon\Mvc\Application($di);
 
+    $application->registerModules(
+        [
+            "admin" => [
+                "className" => "Modules\\Admin\\Module",
+                "path"      => BASE_PATH . "/app/modules/Admin/Module.php",
+            ]
+        ]
+    );
+
     echo $application->handle()->getContent();
 
 } catch (\Exception $e) {

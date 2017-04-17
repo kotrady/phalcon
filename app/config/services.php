@@ -124,7 +124,7 @@ $di->setShared('session', function () {
 
 $di->set('dispatcher', function () {
     $dispatcher = new Dispatcher();
-    $dispatcher->setDefaultNamespace('Action\Controllers');
+    $dispatcher->setDefaultNamespace('Mike\Controllers');
     return $dispatcher;
 });
 
@@ -134,6 +134,7 @@ $di->set('dispatcher', function () {
 $di->set(
     "flashSession",
     function () {
+
         $flash = new FlashSession(
             [
                 "error"   => "alert alert-danger",

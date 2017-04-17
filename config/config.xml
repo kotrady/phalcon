@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <default>
+        <database>
+            <adapter>mysql</adapter>
+            <host>host</host>
+            <username>login</username>
+            <password>heslo</password>
+            <dbname>dbname</dbname>
+            <charset>utf8</charset>
+        </database>
+    </default>
+</config>

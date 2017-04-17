@@ -2,10 +2,10 @@
 namespace Action\Controllers\Base;
 
 use Phalcon\Mvc\View;
-use Web\Action;
+use Web\Mike;
 use Phalcon\Http\Response as Response;
 
-class ImagesController extends Action {
+class ImagesController extends Mike {
 
     public function indexAction() {
         $media = require APP_PATH . '/config/media.php';

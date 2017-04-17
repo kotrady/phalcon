@@ -5,24 +5,22 @@
  * Date: 06.02.17
  * Time: 21:37
  */
-namespace Web;
 
-use Latte;
-use stdClass;
+class Mike extends \Phalcon\Mvc\Controller {
 
-class Action extends \Phalcon\Mvc\Controller {
-
-    protected $user;
-
-    public function getUser() {
-        return $this->session->get('auth') ?: false;
+    static function debug($param){
+        echo '<pre style="color: #cc0000; background: #ffffff; font-size: 14px; display: block;">';
+        print_r($param);
+        echo '</pre>';
+        exit;
     }
 
     public function beforeExecuteRoute() {
-        $this->view->setVar('WEBROOT', $this->config->application->baseUri);
     }
 
     public function afterExecuteRoute($dispatcher) {
+
+        $this->view->setVar('WEBROOT', $this->config->application->webRoot);
 
         if ($this->view->isDisabled() == false) {
             $messages = [];
@@ -40,7 +38,7 @@ class Action extends \Phalcon\Mvc\Controller {
             $this->view->flashes = $messages;
         }
 
-        if ($this->request->get('debug') == "1") {
+        if ($this->request->get('dev')) {
             var_dump($this->view->getParamsToView());
             exit;
         }

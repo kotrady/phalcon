@@ -1,12 +1,9 @@
 <?php
-namespace Action\Controllers;
+namespace Mike\Controllers;
 
-use Web\Login as Login;
-
-class HomeController extends Login {
+class HomeController {
 
     public function indexAction() {
-
     }
 }
 
