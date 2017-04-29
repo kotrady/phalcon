@@ -7,7 +7,7 @@
  */
 namespace Web;
 
-class Login extends \Web\Mike {
+class Login extends \Web\Partum {
 
     public function beforeExecuteRoute() {
         parent::beforeExecuteRoute();

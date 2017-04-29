@@ -1,7 +1,7 @@
 <?php
-namespace Mike\Controllers\Admin;
+namespace Partum\Controllers\Admin;
 
-class AuthController extends \Mike {
+class AuthController extends \Partum {
 
     public function beforeExecuteRoute(){
         $adminUser = new \Admin();

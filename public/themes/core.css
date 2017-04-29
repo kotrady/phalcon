@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&subset=latin-ext');
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ *   Form spin loader
+ */
+form.form-loading {
+    position: relative;
+    z-index: 1;
+}
+form.form-loading::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    content: '';
+    z-index: 10;
+    box-sizing: inherit;
+}
+form.form-loading::after {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+    z-index: 11;
+}
+
+/**
+ *   Button spin loader
+ */
+.btn.btn-loading {
+    position: relative;
+    z-index: 1;
+}
+.btn.btn-loading::after,
+.btn.btn-loading:hover:after {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    z-index: 11;
+    transition: 0s all;
+    background: none !important;
+}
+.btn.btn-loading:hover:before {
+    display: none;
+}
+
+/**
+ *   Custom buttons
+ */
+.btn.btn-blue {
+    background: #2196f3;
+    color: #ffffff;
+}
+.btn.btn-blue:hover {
+    color: #ffffff;
+    box-shadow: 0 1px 6px rgba(0,0,0,.24), 0 1px 4px rgba(0,0,0,.36) !important;
+}
+
+/**
+ *   Custom checkbox
+ */
+
+.partum-checkbox {
+    position: relative;
+    cursor: pointer;
+}
+.partum-checkbox label {
+    padding-left: 24px;
+    position: relative;
+    cursor: pointer;
+    font-weight: 500;
+}
+.partum-checkbox label:after {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -8px;
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: 2px solid #b1b1b1;
+    content: '';
+}
+.partum-checkbox label:before {
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    margin-top: -4px;
+    width: 8px;
+    height: 8px;
+    background: none;
+    content: '';
+}
+.partum-checkbox input[type="checkbox"] {
+    display: none;
+}
+.partum-checkbox label:hover:before {
+    background: #b1b1b1;
+}
+.partum-checkbox input[type="checkbox"]:checked + label {
+    font-weight: 700 ;
+}
+.partum-checkbox input[type="checkbox"]:checked + label:after {
+    border-color: #2196f3;
+}
+.partum-checkbox input[type="checkbox"]:checked + label:before {
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    margin-top: -4px;
+    width: 8px;
+    height: 8px;
+    background: #2196f3;
+    content: '';
+}
+
+/**
+ *   Background animation left/right width
+ */
+.effect-background-hover {
+    position: relative;
+    z-index: 1;
+}
+.effect-background-hover::before,
+.effect-background-hover::after {
+    width: 0;
+    position: absolute;
+    height: 100%;
+    background: red;
+    content: '';
+    transition: width .3s;
+    top: 0;
+    z-index: -1;
+}
+
+.effect-background-hover::before {
+    left: 50%;
+}
+
+.effect-background-hover::after {
+    right: 50%;
+}
+
+.effect-background-hover:hover:before,
+.effect-background-hover:hover:after {
+    width: 50%;
+}
+
+.effect-background-hover > span.text {
+    z-index: 10;
+}
+
+.effect-background-hover.btn-blue::before,
+.effect-background-hover.btn-blue::after {
+    background: #1d7dcc;
+}
+
+/**
+ *   Border animation left/right width
+ */
+.effect-input-label {
+    position: relative;
+}
+.effect-input-label label {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    display: block;
+    transition: top .3s, font-size .3s;
+    font-weight: 500;
+    z-index: 1;
+}
+.effect-input-label.input-focused label {
+    top: -10px;
+    font-size: 10px;
+}
+.effect-input-label .input-focus {
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+}
+.effect-input-border span.input-bar {
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    display: block;
+    width: 100%;
+}
+.effect-input-border span.input-bar::before,
+.effect-input-border span.input-bar::after {
+    width: 0;
+    position: absolute;
+    height: 2px;
+    background: #2196f3;
+    content: '';
+    transition: width .5s;
+}
+.effect-input-border span.input-bar::before {
+    left: 50%;
+}
+.effect-input-border span.input-bar::after {
+    right: 50%;
+}
+.effect-input-border.input-focused span.input-bar::before {
+    width: 50%;
+}
+.effect-input-border.input-focused span.input-bar::after {
+    width: 50%;
+}
+
+/**
+ *   Flash messages
+ */
+#flashMessagesWrap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99999;
+    display: block;
+}
+
+#flashMessagesWrap > div.flash-message {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    background: #fff;
+    display: none;
+    margin: 15px auto;
+    padding: 10px 10px 10px 80px;
+}
+
+#flashMessagesWrap > div.flash-message:before {
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+}
+#flashMessagesWrap > div.flash-message:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    content: '';
+}
+#flashMessagesWrap > div.flash-message.error:before {
+    background: #d92b34 url('/public/themes/icons/flash-message/error.png') center center no-repeat;
+    background-size: 32px;
+}
+#flashMessagesWrap > div.flash-message:after {
+    background: #d92b34;
+}
+
+#flashMessagesWrap > div.flash-message:last-child {
+    margin-bottom: 0px;
+}
+
+#flashMessagesWrap > div.flash-message > div.flash-message-close {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background: url('/public/themes/icons/flash-message/close.png') no-repeat center center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+#flashMessagesWrap > div.flash-message > div.flash-message-title {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+#flashMessagesWrap > div.flash-message > div.flash-message-text {
+    font-size: 14px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

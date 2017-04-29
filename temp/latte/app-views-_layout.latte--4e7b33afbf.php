@@ -34,8 +34,8 @@ class Template4e7b33afbf extends Latte\Runtime\Template
     <body>
         <?php
 		$this->renderBlock('content', get_defined_vars());
-		?>        <script type="text/javascript" src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 9 */ ?>/public/jquery/jquery-3.1.1.min.js"></script>
-        <script type="text/javascript" src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 10 */ ?>/public/js/core.js"></script>
+		?>        <script type="text/javascript" src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 9 */ ?>/public/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 10 */ ?>/public/js/web/core.js"></script>
 <?php
 		if ($flashes) {
 			?>            <script type="text/javascript" src="<?php echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($WEBROOT)) /* line 12 */ ?>/public/js/flash.js"></script>

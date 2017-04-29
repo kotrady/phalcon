@@ -1,0 +1,43 @@
+#login {
+    margin: 100px auto 0;
+    width: 90%;
+    height: auto;
+    max-width: 400px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+}
+#login form.login-form {
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+#login form.login-form > img.user-icon {
+    margin: 0 auto 20px;
+    display: block;
+}
+#login .form-group {
+    position: relative;
+    margin-top: 30px;
+}
+#login .form-group:first-child {
+    margin-top: 0;
+}
+#login input.form-control,
+#form-password input.form-control {
+    width: 100%;
+    border-width: 0 0 1px 0;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 0 6px;
+    border-radius: 0;
+    box-shadow: none;
+}
+#login a {
+    display: inline-block;
+    margin-top: 10px;
+}
+#login .btn.btn-submit {
+    border-radius: 0;
+    margin-top: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    margin-bottom: 15px;
+    position: relative;
+}

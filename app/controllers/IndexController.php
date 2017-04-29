@@ -1,7 +1,7 @@
 <?php
-namespace Mike\Controllers;
+namespace Partum\Controllers;
 
-class IndexController extends \Mike {
+class IndexController extends \Partum {
 
     public function indexAction() {
         $this->flashSession->success("The post was correctly saved!");

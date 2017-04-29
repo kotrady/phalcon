@@ -122,9 +122,16 @@ $di->setShared('session', function () {
     return $session;
 });
 
-$di->set('dispatcher', function () {
+$di->set('dispatcher', function () use ($di) {
     $dispatcher = new Dispatcher();
-    $dispatcher->setDefaultNamespace('Mike\Controllers');
+    $dispatcher->setDefaultNamespace('Partum\Controllers');
+
+    $eventsManager = new Phalcon\Events\Manager();
+    $eventsManager->attach("dispatch", function($event, $dispatcher) {
+        $actionName = Phalcon\Text::camelize($dispatcher->getActionName());
+        $dispatcher->setActionName($actionName);
+    });
+    $dispatcher->setEventsManager($eventsManager);
     return $dispatcher;
 });
 
@@ -135,14 +142,7 @@ $di->set(
     "flashSession",
     function () {
 
-        $flash = new FlashSession(
-            [
-                "error"   => "alert alert-danger",
-                "success" => "alert alert-success",
-                "notice"  => "alert alert-info",
-                "warning" => "alert alert-warning",
-            ]
-        );
+        $flash = new FlashSession();
         return $flash;
     }
 );
@@ -151,6 +151,48 @@ $di->set(
  * Defines route
  */
 $di->set('router', function(){
-    require APP_PATH . '/config/router.php';
+    $router = new \Phalcon\Mvc\Router(false);
+    $router->notFound([
+        'controller' => 'index',
+        'action'     => 'route404'
+    ]);
+
+    $router->removeExtraSlashes(true);
+
+    $router->add('/images/([a-zA-Z0-9_/.-]*)', [
+        'namespace'  => 'Partum\Controllers\Default',
+        'controller' => 'Images',
+        'image'      => 1,
+    ]);
+
+    $router->add('/admin', [
+        'namespace'  => 'Partum\Controllers\Admin',
+        'controller' => 'index',
+        'action' => 'index'
+    ]);
+
+    $router->add('/admin/:controller', [
+        'namespace'  => 'Partum\Controllers\Admin',
+        'controller' => 1,
+        'action' => 'index'
+    ]);
+
+    $router->add('/admin/:action', [
+        'namespace'  => 'Partum\Controllers\Admin',
+        'action' => 1,
+    ]);
+
+    $router->add('/admin/:controller/:action', [
+        'namespace'  => 'Partum\Controllers\Admin',
+        'controller' => 1,
+        'action' => 2
+    ]);
+
+    $router->notFound([
+        'controller' => 'index',
+        'action'     => 'route404'
+    ]);
+
     return $router;
+
 });

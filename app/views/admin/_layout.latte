@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>{$title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{$WEBROOT}/public/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="{$WEBROOT}/public/themes/core.css">
+    <link rel="stylesheet" href="{$WEBROOT}/public/themes/admin/style.css">
+    {block css}{/block}
+</head>
+<body>
+{block content}{/block}
+<script type="text/javascript" src="{$WEBROOT}/public/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="{$WEBROOT}/public/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="{$WEBROOT}/public/js/admin/core.js"></script>
+{if $flashes}
+    <div id="flashMessagesWrap">
+        {foreach $flashes as $flash}
+            <div class="flash-message {$flash->type}" style="display: block;">
+                <div class="flash-message-close"></div>
+                <div class="flash-message-title">
+                    {if $flash->type = 'error'}
+                        {_'Upozorenie'}
+                    {/if}
+                </div>
+                <div class="flash-message-text">{$flash->message}</div>
+            </div>
+        {/foreach}
+    </div>
+{/if}
+{block js}{/block}
+</body>
+</html>

@@ -1,5 +1,5 @@
 <?php
-namespace Mike\Controllers;
+namespace Partum\Controllers;
 
 class HomeController {
 

@@ -1,5 +1,5 @@
 <?php
-namespace Mike\Controllers\Admin;
+namespace Partum\Controllers\Admin;
 
 class CmsController extends AuthController {
 

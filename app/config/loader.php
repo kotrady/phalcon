@@ -7,12 +7,13 @@ $loader = new \Phalcon\Loader();
 $loader->registerDirs([
     $config->application->libraryDir,
     $config->application->controllersDir,
-    $config->application->modelsDir
+    $config->application->modelsDir,
 ]);
 
 $loader->registerNamespaces([
-    'Mike\Controllers'      => __DIR__ . '/../controllers',
-    'Mike\Controllers\Default' => __DIR__ . '/../controllers/Default'
+    'Admin' => __DIR__ . '/../library/Admin',
+    'Partum\Controllers' => __DIR__ . '/../controllers',
+    'Partum\Controllers\Default' => __DIR__ . '/../controllers/Default'
 ]);
 
 $loader->register();

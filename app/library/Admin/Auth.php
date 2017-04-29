@@ -7,4 +7,6 @@
  */
 class Admin_Auth {
 
+
+
 }

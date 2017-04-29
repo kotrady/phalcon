@@ -1,24 +1,41 @@
-<html>
-<head>
-    <title>Prihlásenie / CMS v1.0</title>
-    <link rel="stylesheet" href="{$WEBROOT}/public/public/css/core.css">
-    {block css}{/block}
-</head>
-<body>
-{block content}{/block}
-<script type="text/javascript" src="{$WEBROOT}/public/public/jquery/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="{$WEBROOT}/public/public/js/core.js"></script>
-{if $flashes}
-    <div id="flashMessagesWrap">
-        {foreach $flashes as $flash}
-            <div class="flash-message {$flash->type}" style="display: block;">
-                <div class="flash-message-title}">Title</div>
-                <div class="flash-message-text">{$flash->message}</div>
+{layout '_layout.latte'}
+
+{block css}
+    <link rel="stylesheet" href="{$WEBROOT}/public/themes/admin/login.css">
+{/block}
+
+{block js}
+    <script type="text/javascript" src="{$WEBROOT}/public/js/admin/login.js"></script>
+{/block}
+
+{block content}
+    <div id="login" data-form="login-form">
+        <form action="/admin/login" method="post" class="login-form form-loader">
+            <img src="/public/themes/icons/user.png" class="user-icon" alt="Uživateľ">
+            <div class="form-group effect-input-border effect-input-label">
+                <label for="admin-email">E-mail</label>
+                <input autocomplete="new-email" type="text" class="form-control input-focus" name="admin_email" required="required" id="admin-email">
+                <span class="input-bar"></span>
             </div>
-        {/foreach}
+            <div class="form-group effect-input-border effect-input-label">
+                <label for="admin-password">Heslo</label>
+                <input autocomplete="new-password" type="password" class="form-control input-focus" name="admin_password" required="required" id="admin-password">
+                <span class="input-bar"></span>
+            </div>
+            <a href="/admin/lost-password">
+                Zabudnuté heslo
+            </a>
+            <button type="submit" class="btn btn-blue btn-block btn-lg btn-submit effect-background-hover">
+                <span class="text">
+                    Prihlásiť sa
+                </span>
+            </button>
+            <div class="partum-checkbox">
+                <input type="checkbox" name="admin_remember_me" id="remember-me">
+                <label for="remember-me">
+                    Zapamätať prihlásenie
+                </label>
+            </div>
+        </form>
     </div>
-    <script type="text/javascript" src="{$WEBROOT}/public/public/js/flash.js"></script>
-{/if}
-{block js}{/block}
-</body>
-</html>
+{/block}

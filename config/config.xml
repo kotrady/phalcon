@@ -3,10 +3,10 @@
     <default>
         <database>
             <adapter>mysql</adapter>
-            <host>host</host>
-            <username>login</username>
-            <password>heslo</password>
-            <dbname>dbname</dbname>
+            <host>localhost</host>
+            <username>root</username>
+            <password></password>
+            <dbname>eshop</dbname>
             <charset>utf8</charset>
         </database>
     </default>
